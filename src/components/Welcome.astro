@@ -1,9 +1,12 @@
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
+import astroLogo from '@/assets/astro.svg';
+import background from '@/assets/background.svg';
+
+export const prerender = false;
 ---
 
 <div id="container">
+	{console.log("aqui esta el src", astroLogo.src)}
 	<img id="background" src={background.src} alt="" fetchpriority="high" />
 	<main>
 		<section id="hero">
