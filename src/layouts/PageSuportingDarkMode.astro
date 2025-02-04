@@ -1,0 +1,23 @@
+---
+---
+
+<html lang="es" class="scroll-smooth">
+  <slot />
+</html>
+
+<script is:inline>
+  const setTheme = () => {
+    if (!window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  };
+  setTheme();
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', () => setTheme());
+  document.addEventListener('astro:page-load', () => {
+    setTheme();
+  });
+</script>

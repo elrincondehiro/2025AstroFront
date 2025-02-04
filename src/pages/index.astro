@@ -1,11 +1,53 @@
 ---
 import Welcome from '@/components/Welcome.astro';
+import MainSlider from '@/components/ui/slider/MainSlider.astro';
 import Layout from '@/layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const sliderItems = [
+  {
+    image: 'https://picsum.photos/1920/1080',
+    title: 'Explore Nature',
+    description: 'Discover the beauty of untouched landscapes and breathtaking views.',
+    ctaText: 'Learn More',
+    ctaHref: '/nature'
+  },
+  {
+    image: 'https://picsum.photos/1920/1080',
+    title: 'Modern Architecture',
+    description: 'Experience the fusion of form and function in contemporary design.',
+    ctaText: 'View Projects',
+    ctaHref: '/architecture'
+  },
+  {
+    image: 'https://picsum.photos/1920/1080',
+    title: 'Future Technology',
+    description: 'Step into the future with cutting-edge innovations and solutions.',
+    ctaText: 'Discover More',
+    ctaHref: '/technology'
+  }
+];
+
+export const prerender = true;
 ---
 
-<Layout>
-	<Welcome />
+<Layout title='Bienvenido a ERDHIRO'>
+	<MainSlider items={sliderItems} />
+	<h1 class="py-8 text-5xl font-bold text-center">Bienvenido a ERDHIRO</h1>
+	
+	<Welcome server:defer>
+		<h2 slot="fallback" class="px-4" > loading...</h2>	
+	</Welcome>
+	<Welcome server:defer>
+		<h2 slot="fallback" class="px-4" > loading...</h2>	
+	</Welcome>
+	<Welcome server:defer>
+		<h2 slot="fallback" class="px-4" > loading...</h2>	
+	</Welcome>
+	<Welcome server:defer>
+		<h2 slot="fallback" class="px-4" > loading...</h2>	
+	</Welcome>
+	<Welcome server:defer>
+		<h2 slot="fallback" class="px-4" > loading...</h2>	
+	</Welcome>
+
 </Layout>

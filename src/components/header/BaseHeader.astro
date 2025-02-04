@@ -1,0 +1,112 @@
+---
+import { Icon } from 'astro-icon/components';
+export const prerender = true;
+---
+
+<header class="sticky top-0 z-50 bg-white shadow-md">
+  <!-- Mobile Header -->
+  <div class="flex items-center justify-between p-4 lg:hidden">
+    <button id="mobile-menu-button" class="text-gray-600" aria-label="Menu">
+      <Icon name="heroicons:bars-3" class="h-6 w-6" />
+    </button>
+    
+    <a href="/" class="text-xl font-bold text-gray-800">ERDHIRO</a>
+    
+    <div class="flex items-center gap-3">
+      <a href="/cart" class="text-gray-600" aria-label="Cart">
+        <Icon name="heroicons:shopping-cart" class="h-6 w-6" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden bg-white lg:hidden absolute w-full shadow-sm">
+    <div class="p-4">
+      <div class="mb-4">
+        <div class="relative">
+          <input
+            type="search"
+            placeholder="Buscar productos..."
+            class="w-full rounded-lg border border-gray-300 px-4 py-2 pl-10 focus:border-blue-500 focus:outline-none"
+          />
+          <Icon name="heroicons:magnifying-glass" class="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+        </div>
+      </div>
+      <nav class="space-y-4">
+        <a href="/categories" class="block text-gray-600 hover:text-gray-900">Categorías</a>
+        <a href="/wishlist" class="block text-gray-600 hover:text-gray-900">Lista de Deseos</a>
+        <a href="/account" class="block text-gray-600 hover:text-gray-900">Mi Cuenta</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Desktop Header -->
+  <div class="hidden lg:block relative">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="flex h-16 items-center justify-between gap-8">
+        <a href="/" class="text-2xl font-bold text-gray-800">ERDHIRO</a>
+        
+        <div class="flex-1 max-w-2xl">
+          <div class="relative">
+            <input
+              type="search"
+              placeholder="Buscar productos..."
+              class="w-full border-2 border-b-4 border-r-4 border-gray-800 px-4 py-2 pl-10 focus:border-blue-500 focus:outline-none"
+            />
+            <!-- <Icon name="heroicons:magnifying-glass" class="absolute left-3 top-2.5 h-5 w-5 text-gray-400" /> -->
+            <Icon name="pixelarticons:search" class="absolute left-3 top-2.5 h-5 w-5 text-gray-800" />
+          </div>
+        </div>
+        
+        <nav class="flex items-center gap-6">
+          <div class="group">
+            <a href="/tienda" class="text-gray-600 hover:text-gray-900 flex flex-col items-center gap-2">
+              <Icon name="pixelarticons:store" class="h-6 w-6 group-hover:scale-125 transition-all" />
+              <span class="text-xs group-hover:scale-125  group-hover:translate-y-1 transition-all">Tienda</span>
+            </a>
+            <div class="invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all absolute left-0 right-0 top-full -mx-[50vw] w-screen bg-green-400" style="margin-left: calc(-50vw + 50%);">
+              <div class="border-8 border-red-500 ">
+                <a href="/eco" class="text-gray-700 hover:text-gray-900">Eco</a>
+                <a href="/servicios" class="text-gray-700 hover:text-gray-900">Servicios</a>
+                <a href="/productos" class="text-gray-700 hover:text-gray-900">Productos</a>
+                <a href="/contacto" class="text-gray-700 hover:text-gray-900">Contacto</a>
+              </div>
+            </div>
+          </div>
+          <a href="/wishlist" class="text-gray-600 hover:text-gray-900 flex flex-col items-center gap-2 group">
+            <Icon name="pixelarticons:heart" class="h-6 w-6 group-hover:scale-125 transition-all" />
+            <span class="text-xs group-hover:scale-125  group-hover:translate-y-1 transition-all">Lista Deseados</span>
+          </a>
+          <a href="/account" class="text-gray-600 hover:text-gray-900 flex flex-col items-center gap-2 group">
+            <Icon name="pixelarticons:users" class="h-6 w-6 group-hover:scale-125 transition-all" />
+            <span class="text-xs group-hover:scale-125  group-hover:translate-y-1 transition-all">Mi Cuenta</span>
+          </a>
+          <a href="/cart" class="text-gray-600 hover:text-gray-900 flex flex-col items-center gap-2 group">
+            <Icon name="pixelarticons:cart" class="h-6 w-6 group-hover:scale-125 transition-all" />
+            <span class="text-xs group-hover:scale-125  group-hover:translate-y-1 transition-all">Carrito</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div id="cat-menu" class="hidden">
+    <div class="absolute w-full bg-white shadow-md flex flex-col items-center justify-center">
+      <a href="/eco" class="text-gray-700 hover:text-gray-900">Eco</a>
+      <a href="/servicios" class="text-gray-700 hover:text-gray-900">Servicios</a>
+      <a href="/productos" class="text-gray-700 hover:text-gray-900">Productos</a>
+      <a href="/contacto" class="text-gray-700 hover:text-gray-900">Contacto</a>
+    </div>  
+  </div>
+</header>
+
+<script>
+  
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+  
+</script>

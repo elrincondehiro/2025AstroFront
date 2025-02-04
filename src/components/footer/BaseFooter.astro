@@ -1,0 +1,72 @@
+---
+import { Icon } from 'astro-icon/components';
+export const prerender = true;
+---
+
+<footer class="bg-white pt-12 mt-auto">
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <!-- About -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900">Sobre Nosotros</h3>
+        <p class="mt-4 text-gray-600">
+          Ofrecemos productos de calidad con un compromiso con la sostenibilidad y la satisfacción del cliente.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900">Enlaces Rápidos</h3>
+        <ul class="mt-4 space-y-2">
+          <li><a href="/about" class="text-gray-600 hover:text-gray-900">Sobre Nosotros</a></li>
+          <li><a href="/contact" class="text-gray-600 hover:text-gray-900">Contacto</a></li>
+          <li><a href="/blog" class="text-gray-600 hover:text-gray-900">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Customer Service -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900">Atención al Cliente</h3>
+        <ul class="mt-4 space-y-2">
+          <li><a href="/faq" class="text-gray-600 hover:text-gray-900">FAQ</a></li>
+          <li><a href="/shipping" class="text-gray-600 hover:text-gray-900">Envíos</a></li>
+          <li><a href="/returns" class="text-gray-600 hover:text-gray-900">Devoluciones</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900">Contacto</h3>
+        <ul class="mt-4 space-y-2">
+          <li class="flex items-center gap-2 text-gray-600">
+            <Icon name="heroicons:envelope" class="h-5 w-5" />
+            info@ERDHIRO.com
+          </li>
+          <li class="flex items-center gap-2 text-gray-600">
+            <Icon name="heroicons:phone" class="h-5 w-5" />
+            +34 900 123 456
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-gray-200 py-6">
+      <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+        <p class="text-sm text-gray-600">
+          © {new Date().getFullYear()} ERDHIRO. Todos los derechos reservados.
+        </p>
+        <div class="flex gap-4">
+          <a href="#" class="text-gray-400 hover:text-gray-600">
+            <Icon name="simple-icons:facebook" class="h-6 w-6" />
+          </a>
+          <a href="#" class="text-gray-400 hover:text-gray-600">
+            <Icon name="simple-icons:instagram" class="h-6 w-6" />
+          </a>
+          <a href="#" class="text-gray-400 hover:text-gray-600">
+            <Icon name="simple-icons:twitter" class="h-6 w-6" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

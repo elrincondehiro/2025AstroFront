@@ -1,22 +1,24 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import PageSupportingDarkmode from "@/layouts/PageSuportingDarkMode.astro";
+import BaseHead from "@/components/head/BaseHead.astro";
+import BaseHeader from "@/components/header/BaseHeader.astro";
+import BaseFooter from "@/components/footer/BaseFooter.astro";
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = "ERDHIRO" } = Astro.props;
+
+---
+
+<PageSupportingDarkmode>
+  <BaseHead title={title} description={description} />
+  <body class="min-h-screen flex flex-col">
+    <BaseHeader />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <BaseFooter />
+  </body>
+</PageSupportingDarkmode>
